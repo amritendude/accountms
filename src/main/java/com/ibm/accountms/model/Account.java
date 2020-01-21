@@ -1,64 +1,58 @@
 package com.ibm.accountms.model;
-import javax.persistence.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table(name = "account")
+@Document(collection = "account")
 public class Account {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "account_id")
-    private Long id;
+    private Long account_id;
 
-    @Column(name = "account_number")
-    private String number;
+    private String account_number;
 
-    @Column(name = "customer_id")
-    private Long customerId;
+    private Long customer;
 
-    @Column(name = "account_type")
-    private String type;
+    private String account_type;
 
-    @Column(name = "balance")
-    private Double balance;
+    private Double account_balance;
 
-    public Long getId() {
-        return id;
+    public Long getAccount_id() {
+        return account_id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setAccount_id(Long account_id) {
+        this.account_id = account_id;
     }
 
-    public String getNumber() {
-        return number;
+    public String getAccount_number() {
+        return account_number;
     }
 
-    public void setNumber(String number) {
-        this.number = number;
+    public void setAccount_number(String account_number) {
+        this.account_number = account_number;
     }
 
-    public Long getCustomerId() {
-        return customerId;
+    public Long getCustomer() {
+        return customer;
     }
 
-    public void setCustomerId(Long customerId) {
-        this.customerId = customerId;
+    public void setCustomer(Long customer) {
+        this.customer = customer;
     }
 
-    public String getType() {
-        return type;
+    public String getAccount_type() {
+        return account_type;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setAccount_type(String account_type) {
+        this.account_type = account_type;
     }
 
-    public Double getBalance() {
-        return balance;
+    public Double getAccount_balance() {
+        return account_balance;
     }
 
-    public void setBalance(Double balance) {
-        this.balance = balance;
+    public void setAccount_balance(Double account_balance) {
+        this.account_balance = account_balance;
     }
 }
